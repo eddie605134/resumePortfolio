@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background-color: antiquewhite;
+        width: 100%;
+        height: 100vh;
+
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+
+        background-color: antiquewhite;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .card {
+        text-align: center;
+        background-color: bisque;
+        width: 250px;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid goldenrod;
+        border-radius: 10px;
+        box-shadow: 4px 4px 1px gray;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 40px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .mt {
+        margin-bottom: 20px;
+    }
+
+    .time {
+        width: 400px;
+        padding: 10px 0;
+        background-color: antiquewhite;
+        font-size: 30px;
+        margin: auto;
+    }
+</style>
+</head>
+
+<body>
+    <div class="time"></div>
+    <div id="app" class="container">
+        <div></div>
+        <div class="card" v-for=" location,value of locationName[0] " :key="value" @click=" aaa ">
+         <div class="card_img">
+             <!-- <img :src="  " alt="">--> </div>
+        <div class="card_contain">
+            <h1>{{ location.locationName }}</h1>
+            <h2>{{ location.weatherElement[0].time[0].parameter.parameterName }}</h2>
+            <div class="">
+                <span>最高溫:{{ location.weatherElement[4].time[0].parameter.parameterName }}&ordm;C</span>
+                <span>最低溫:{{ location.weatherElement[2].time[0].parameter.parameterName }}&ordm;C</span>
+            </div>
+            <div class="mt">台天炎熱，出門注意防曬</div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script>
+
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                /*weatherData: [],
+                locationName:[],*/
+                weather:null,
+				loading:true,
+				selected:null,
+				weathert:null
+
+
+            },
+            /*async mounted() {
+                this.weatherData = _.get(await axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-E9B76176-BE97-482F-964D-73AB54604A82'),'data')
+
+            },*/
+            computed: {
+                /*locationName1(){
+                    this.locationName.push(this.weatherData.records.location)
+                    return this.locationName[0]
+                }*/
+            },
+            methods: {
+                weatherType(z) {
+                    return (this.weathert.location[z].weatherElement[0].time[0].parameter.parameterValue);
+                },
+                getData() {
+                    axios
+                      .get("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-E9B76176-BE97-482F-964D-73AB54604A82")
+                      .then(response => {
+                        console.log(response);
+                        this.weather = response.data.records.location;
+                        this.weathert = response.data.records;
+                      })
+                      .catch(error => {
+                          console.log(error);
+                      })
+                      .finally(() => {this.loading = false;});
+                  }
+
+                /*srcHandler(wx_code) {
+                    if (wx_code == 1) {
+                        return "https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                    }
+                    else if (wx_code == 2 || wx_code == 3) {
+                        return "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    }
+                    else if (wx_code == 4 || wx_code == 5 || wx_code == 6 || wx_code == 7) {
+                        return "https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                    }
+                    else if (wx_code == 8 || wx_code == 9 || wx_code == 10 || wx_code == 11) {
+                        return "https://ssl.gstatic.com/onebox/weather/64/rain_s_cloudy.png"
+                    }
+                }*/
+
+            },
+            created() {
+                this.getData();
+            },
+        })
+
+
+
+
+
+
+
+
+
+
+
+                var today = new Date()
+
+                var current_day = today.getFullYear() + "年" + (today.getMonth() + 1) + "月" + today.getDate() + "日";
+                var current_time = today.getHours() + ":" + today.getMinutes();
+
+                var nowtime = document.querySelector('.time')
+                nowtime.innerHTML += "現在時間" + current_day + current_time
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

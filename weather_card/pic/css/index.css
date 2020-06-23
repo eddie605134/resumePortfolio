@@ -1,0 +1,190 @@
+@-webkit-keyframes rota {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rota {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes big {
+  0% {
+    border-left: 4vmin solid #ffe504;
+    border-right: 4vmin solid #ffe504;
+  }
+  25% {
+    border-left: 6.5vmin solid #ffe504;
+    border-right: 6.5vmin solid #ffe504;
+  }
+  50% {
+    border-left: 4vmin solid #ffe504;
+    border-right: 4vmin solid #ffe504;
+  }
+  75% {
+    border-left: 3vmin solid #ffe504;
+    border-right: 3vmin solid #ffe504;
+  }
+  100% {
+    border-left: 4vmin solid #ffe504;
+    border-right: 4vmin solid #ffe504;
+  }
+}
+
+@keyframes big {
+  0% {
+    border-left: 4vmin solid #ffe504;
+    border-right: 4vmin solid #ffe504;
+  }
+  25% {
+    border-left: 6.5vmin solid #ffe504;
+    border-right: 6.5vmin solid #ffe504;
+  }
+  50% {
+    border-left: 4vmin solid #ffe504;
+    border-right: 4vmin solid #ffe504;
+  }
+  75% {
+    border-left: 3vmin solid #ffe504;
+    border-right: 3vmin solid #ffe504;
+  }
+  100% {
+    border-left: 4vmin solid #ffe504;
+    border-right: 4vmin solid #ffe504;
+  }
+}
+
+body {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .sun {
+  background-size: 88%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+body .sun .sun_lights {
+  width: 150px;
+  height: 150px;
+  -webkit-animation: rota 7s infinite;
+          animation: rota 7s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+body .sun .sun_lights .sun_light1 {
+  height: 3%;
+  width: 15vmin;
+  background: transparent;
+  border-left: 4vmin solid #ffe504;
+  border-right: 4vmin solid #ffe504;
+  -webkit-transform-origin: -0% -50%;
+          transform-origin: -0% -50%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: rotateZ(0deg) translate(-50%, -50%);
+          transform: rotateZ(0deg) translate(-50%, -50%);
+  -webkit-animation: big 6s infinite;
+          animation: big 6s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+body .sun .sun_lights .sun_light2 {
+  height: 3%;
+  width: 15vmin;
+  background: transparent;
+  border-left: 4vmin solid #ffe504;
+  border-right: 4vmin solid #ffe504;
+  -webkit-transform-origin: -0% -50%;
+          transform-origin: -0% -50%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: rotateZ(45deg) translate(-50%, -50%);
+          transform: rotateZ(45deg) translate(-50%, -50%);
+  -webkit-animation: big 6s infinite;
+          animation: big 6s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+body .sun .sun_lights .sun_light3 {
+  height: 3%;
+  width: 15vmin;
+  background: transparent;
+  border-left: 4vmin solid #ffe504;
+  border-right: 4vmin solid #ffe504;
+  -webkit-transform-origin: -0% -50%;
+          transform-origin: -0% -50%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: rotateZ(90deg) translate(-50%, -50%);
+          transform: rotateZ(90deg) translate(-50%, -50%);
+  -webkit-animation: big 6s infinite;
+          animation: big 6s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+body .sun .sun_lights .sun_light4 {
+  height: 3%;
+  width: 15vmin;
+  background: transparent;
+  border-left: 4vmin solid #ffe504;
+  border-right: 4vmin solid #ffe504;
+  -webkit-transform-origin: -0% -50%;
+          transform-origin: -0% -50%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: rotateZ(135deg) translate(-50%, -50%);
+          transform: rotateZ(135deg) translate(-50%, -50%);
+  -webkit-animation: big 6s infinite;
+          animation: big 6s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+body .sun svg {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+}
+/*# sourceMappingURL=index.css.map */

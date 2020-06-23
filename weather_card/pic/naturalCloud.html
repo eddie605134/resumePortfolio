@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vw;
+
+            padding: 1%;
+        }
+
+        /*#cloud-circle {
+            width: 500px;
+            height: 275px;
+            background: coral;
+            border-radius: 50%;
+            filter: url(#filter);
+            box-shadow: 400px 400px 60px 0px #fff;
+            position: absolute;
+
+            top: -320px;
+
+            left: -320px;
+
+        }*/
+
+        .cloud {
+            width: 133%;
+            height:44%;
+            border-radius: 50%;
+            position: absolute;
+            top: -285px;
+            left: -346px;
+            overflow: hidden;
+          }
+
+          .cloud-back {
+            filter: url(#filter-back);
+            box-shadow: 300px 300px 30px -20px #fff;
+          }
+
+          .cloud-mid {
+            filter: url(#filter-mid);
+            box-shadow: 300px 340px 70px -85px rgba(158, 168, 179, 0.5);
+              left: -312px;
+          }
+
+          .cloud-front {
+            filter: url(#filter-front);
+            box-shadow: 300px 370px 60px -72px rgba(0, 0, 0, 0.3);
+            left: -312px;
+            top: -291px
+          }
+
+          .card{
+            width: 250px;
+            height: 400px;
+            background: linear-gradient(165deg, #527785 0%, #7FB4C7 100%);
+            border: 1px solid #000000;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+          }
+    </style>
+</head>
+
+<body>
+    <svg width="0" height="0">
+        <filter id="filter-back">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4"
+      seed="0" />
+            <feDisplacementMap  in="SourceGraphic" scale="170" />
+          </filter>
+             <filter id="filter-mid">
+              <feTurbulence type="fractalNoise"  baseFrequency="0.012" numOctaves="2"
+      seed="0"/>
+            <feDisplacementMap  in="SourceGraphic" scale="150" />
+          </filter>
+          <filter id="filter-front">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2"
+      seed="0"/>
+            <feDisplacementMap  in="SourceGraphic" scale="100" />
+          </filter>
+    </svg>
+    <div class="card">
+<div class="cloud cloud-back" id=""></div>
+    <div class="cloud cloud-mid" id=""></div>
+    <div class="cloud cloud-front" id=""></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+@mixin keyframes($animationName)
+    @keyframes #{$animationName}
+        @content;
+
+@function randomNum($min, $max)
+  $randomNum: $min + floor(random() * (($max - $min) + 1))
+  @return $randomNum
+
+@include keyframes (rota)
+    0%
+        transform: rotateZ(0deg)
+    50%
+        transform: rotateZ(180deg)
+    100%
+        transform: rotateZ(360deg)
+
+@include keyframes (big)
+    0%
+        border-left: 4vmin solid #ffe504
+        border-right: 4vmin solid #ffe504
+    25%
+        border-left: 6.5vmin solid #ffe504
+        border-right: 6.5vmin solid #ffe504
+    50%
+        border-left: 4vmin solid #ffe504
+        border-right: 4vmin solid #ffe504
+    75%
+        border-left: 3vmin solid #ffe504
+        border-right: 3vmin solid #ffe504
+    100%
+        border-left: 4vmin solid #ffe504
+        border-right: 4vmin solid #ffe504
+
+@mixin sun_light($hs)
+    height: 3%
+    width: 15vmin
+    background: transparent
+    border-left: 4vmin solid #ffe504
+    border-right: 4vmin solid #ffe504
+    transform-origin: -0% -50%
+    top: 50%
+    left: 50%
+    position: absolute
+    transform: rotateZ($hs#{deg}) translate(-50%, -50%)
+    animation: big 6s infinite
+    animation-timing-function: linear
+
+
+
+body
+    margin: 0
+    box-sizing: border-box
+    .sun
+        background-size: 88%
+        width: fit-content
+        position: relative
+        position: absolute
+        top: 50px
+        left: 50px
+        .sun_lights
+            width: 150px
+            height: 150px
+            animation: rota 7s infinite
+            animation-timing-function: linear
+            .sun_light1
+                +sun_light($hs: 0)
+                animation-delay: .5s
+            .sun_light2
+                +sun_light($hs: 45)
+                animation-delay: 1s
+            .sun_light3
+                +sun_light($hs: 90)
+                animation-delay: 1.5s
+            .sun_light4
+                +sun_light($hs: 135)
+        svg
+            position: absolute
+            top: 22px
+            left: 24px
