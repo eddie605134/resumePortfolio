@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,53 +56,58 @@
             padding: 10px 0;
             background-color: antiquewhite;
             font-size: 30px;
-            margin: auto;
+            margin: 0 auto;
         }
     </style>
 </head>
+
 <body>
-    <div class="time"></div>
     <div id="app" class="container">
-        <div></div>
-        <div class="card" v-for=" location,value of locationName[0] " :key="value">
-         <div class="card_img">
-             <!-- <img :src="  " alt="">--> </div>
-        <div class="card_contain">
-            <h1>{{ location.locationName }}</h1>
-            <h2>{{ location.weatherElement[0].time[0].parameter.parameterName }}</h2>
-            <div class="">
-                <span>最高溫:{{ location.weatherElement[4].time[0].parameter.parameterName }}&ordm;C</span>
-                <span>最低溫:{{ location.weatherElement[2].time[0].parameter.parameterName }}&ordm;C</span>
+        <div class="time">{{ now.format('YYYY/MM/DD HH:mm:ss') }}</div>
+        <div class="card" v-for="(weather, i) of weathers " :key="i">
+            <div class="card_img">
+                <!-- <img :src="  " alt="">-->
             </div>
-            <div class="mt">台天炎熱，出門注意防曬</div>
+            <div class="card_contain">
+                <h1>{{ weather.city }}</h1>
+                <h2>{{ weather.wxName }}</h2>
+                <div class="">
+                    <span>最高溫:{{ weather.high_t }}&ordm;C</span>
+                    <span>最低溫:{{ weather.low_t }}&ordm;C</span>
+                </div>
+                <div class="mt">{{ weather.ci }}</div>
+            </div>
         </div>
-    </div>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment/moment.min.js"></script>
     <script>
-
-        let vm = new Vue({
+        const vm = new Vue({
             el: '#app',
             data: {
-                weatherData: [],
-                locationName:[],
-
-
-
+                weathers: [],
+                now: moment(),
             },
             async mounted() {
-                this.weatherData = _.get(await axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-E9B76176-BE97-482F-964D-73AB54604A82'),'data')
-
-            },
-            computed: {
-                locationName1(){
-                    this.locationName.push(this.weatherData.records.location)
-                    return this.locationName[0]
-                }
+                const res = _.get(await axios.get(
+                    'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-E9B76176-BE97-482F-964D-73AB54604A82'
+                    ), 'data')
+                this.weathers = _.map(_.get(res, 'records.location'), row => ({
+                    ci: _.get(row, 'weatherElement.3.time.0.parameter.parameterName'),
+                    city: _.get(row, 'locationName'),
+                    endTime: _.get(row, 'weatherElement.0.time.0.endTime'),
+                    high_t: _.get(row, 'weatherElement.4.time.0.parameter.parameterName'),
+                    low_t: _.get(row, 'weatherElement.2.time.0.parameter.parameterName'),
+                    popName: _.get(row, 'weatherElement.1.time.0.parameter.parameterName'),
+                    popUnit: _.get(row, 'weatherElement.1.time.0.parameter.parameterUnit'),
+                    startTime: _.get(row, 'weatherElement.0.time.0.startTime'),
+                    wxName: _.get(row, 'weatherElement.0.time.0.parameter.parameterName'),
+                    wxValue: _.get(row, 'weatherElement.0.time.0.parameter.parameterValue'),
+                }))
             },
             methods: {
                 /*srcHandler(wx_code) {
@@ -209,19 +215,10 @@
 
 
             });*/
-
-
-
-
-
-
-
-
-
-
     </script>
 
 
 
 </body>
+
 </html>
