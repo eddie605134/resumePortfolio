@@ -3,7 +3,8 @@ svg {
 }
 
 path {
-  stroke: white;
+  stroke: #b7bdda;
+  stroke-width: 3px;
   fill: transparent;
   -webkit-transition: .5s;
   transition: .5s;
@@ -12,6 +13,7 @@ path {
 
 path:hover {
   fill: #B99362;
+  stroke-width: 1px;
   -webkit-transform: translate(-3px, -3px);
           transform: translate(-3px, -3px);
 }
@@ -23,7 +25,61 @@ path:hover {
 }
 
 body {
+  color: #B99362;
   background: #222;
   margin: 0;
+}
+
+body #app .webInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-position: center;
+  background-size: cover;
+}
+
+body #app .webInner .svgArea {
+  width: 50%;
+}
+
+body #app .webInner .content {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #app .webInner .content .card {
+  width: 80%;
+  position: relative;
+}
+
+body #app .webInner .content .card .card_contain .city {
+  position: absolute;
+  top: -171px;
+  left: 82px;
+  font-size: 45px;
+}
+
+body #app .webInner .content .card .card_contain .weatherType {
+  font-size: 31px;
+}
+
+body #app .webInner .content .card .card_contain .HL {
+  padding-left: 125px;
+  font-size: 29px;
+}
+
+body #app .webInner .content .card .card_contain .mt {
+  position: absolute;
+  top: 241px;
+  left: -48px;
+  font-size: 30px;
 }
 /*# sourceMappingURL=index.css.map */

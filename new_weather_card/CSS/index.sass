@@ -1,16 +1,50 @@
 svg
     height: 99vh
 path
-    stroke: white
+    stroke: #b7bdda
+    stroke-width: 3px
     fill: transparent
     transition: .5s
     cursor: pointer
     &:hover
         fill: #B99362
+        stroke-width: 1px
         transform: translate(-3px,-3px)
 *
     box-sizing: border-box
     font-family: 'Noto Serif TC', serif
 body
+    color: #B99362
     background: #222
     margin: 0
+    #app
+        .webInner
+            display: flex
+            background-position: center
+            background-size: cover
+            .svgArea
+                width: 50%
+            .content
+                width: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                .card
+                    width: 80%
+                    position: relative
+                    .card_contain
+                        .city
+                            position: absolute
+                            top: -171px
+                            left: 82px
+                            font-size: 45px
+                        .weatherType
+                            font-size: 31px
+                        .HL
+                            padding-left: 125px
+                            font-size: 29px
+                        .mt
+                            position: absolute
+                            top: 241px
+                            left: -48px
+                            font-size: 30px
