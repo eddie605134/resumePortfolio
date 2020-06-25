@@ -33,7 +33,8 @@
 
 <body>
     <div id="app">
-        <div class="webInner" :class="{ suc: active }" >
+        <div class="webInner">
+
             <div class="svgArea">
                 <svg id="ff75fbce-22aa-40d4-92cd-15785bbc85ab" data-name="svg2606" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 850 1200">
@@ -136,9 +137,10 @@
                             <div class="HL">
                                 <span>最高溫:{{ nowArea.high_t }}&ordm;C</span>
                                 <span>最低溫:{{ nowArea.low_t }}&ordm;C</span>
+                                {{ nowArea.wxValue }}
+                                {{weatherT}}
                             </div>
                             <div class="mt">{{ nowArea.ci }}</div>
-                            {{ }}
                         </div>
                     </div>
                 </template>
@@ -190,6 +192,8 @@
             3: 'https://cdn.hk01.com/di/media/images/cis/5e9fcd9bf0e8002a28abcca8.jpeg/syyIdp6qr_lVOlAiisUqyHBxgglC8tSoM4mUDDOJlAw',
         }
 
+        let number = ""
+
 
         const vm = new Vue({
             el: '#app',
@@ -219,29 +223,35 @@
                 }))
             },
             methods: {
+                numb(){
+                    if(this.wImg){
+                        number = this.wImg
+                    }
+
+                }
             },
             computed: {
                 nowArea() {
                     var vobj = this
                     var result = this.weathers.filter((obj) => {
                         return obj.city == vobj.hoverName
+
                     })
                     return result.length == 0 ? null : result[0]
-
                 },
                 wImg() {
-                    if (this.nowArea.wxValue == 1) {
-                        this.weatherT = 0
-                        //return "background-image: url('https://bpic.588ku.com/back_list_pic/19/10/22/b06295bf52be1f3e085b57a2d624f463.jpg')"
-                    } else if (this.nowArea.wxValue == 2 || this.nowArea.wxValue == 3) {
-                        this.weatherT = 1
-                        //return "background-image: url('https://1.bp.blogspot.com/-Y-dFmtd87lo/ThceKSZ0-5I/AAAAAAAAAUU/N4G0xF5JiaY/s1600/HKrain_clound1000.jpg')"
-                    } else if (this.nowArea.wxValue == 4 || this.nowArea.wxValue == 5 || this.nowArea.wxValue == 6 || this.nowArea.wxValue == 7) {
-                        this.weatherT = 2
-                        //return "background-image: url('https://s3-ap-southeast-2.amazonaws.com/weatherwatch-assets/wp-content/uploads/2020/02/23034939/picture-23784.jpg')"
-                    } else if (this.nowArea.wxValue == 8 || this.nowArea.wxValue == 9 || this.nowArea.wxValue == 10 || this.nowArea.wxValue == 11) {
-                        this.weatherT = 3
-                        //return "background-image: url('https://cdn.hk01.com/di/media/images/cis/5e9fcd9bf0e8002a28abcca8.jpeg/syyIdp6qr_lVOlAiisUqyHBxgglC8tSoM4mUDDOJlAw')"
+                    if (this.nowArea.wxValue == "1") {
+
+                        return "background-image: url('https://bpic.588ku.com/back_list_pic/19/10/22/b06295bf52be1f3e085b57a2d624f463.jpg')"
+                    } else if (this.nowArea.wxValue == "2" || this.nowArea.wxValue == "3") {
+
+                        return "background-image: url('https://1.bp.blogspot.com/-Y-dFmtd87lo/ThceKSZ0-5I/AAAAAAAAAUU/N4G0xF5JiaY/s1600/HKrain_clound1000.jpg')"
+                    } else if (this.nowArea.wxValue == "4" || this.nowArea.wxValue == "5" || this.nowArea.wxValue == "6" || this.nowArea.wxValue == "7") {
+
+                        return "background-image: url('https://s3-ap-southeast-2.amazonaws.com/weatherwatch-assets/wp-content/uploads/2020/02/23034939/picture-23784.jpg')"
+                    } else if (this.nowArea.wxValue == "8" || this.nowArea.wxValue == "9" || this.nowArea.wxValue == "10" || this.nowArea.wxValue == "11"||this.nowArea.wxValue == "12"||this.nowArea.wxValue == "13"||this.nowArea.wxValue == "14"||this.nowArea.wxValue == "15") {
+
+                        return "background-image: url('https://cdn.hk01.com/di/media/images/cis/5e9fcd9bf0e8002a28abcca8.jpeg/syyIdp6qr_lVOlAiisUqyHBxgglC8tSoM4mUDDOJlAw')"
                     }
                 },
             },
@@ -250,7 +260,11 @@
         $('path').mouseenter(function (e) {
             var name = $(this).attr('data-name')
             vm.hoverName = name
+            vm.numb()
+            var  web = document.querySelector(".webInner")
+            web.setAttribute('style',number)
         })
+
 
 
 
