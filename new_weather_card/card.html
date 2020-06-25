@@ -33,7 +33,7 @@
 
 <body>
     <div id="app">
-        <div class="webInner">
+        <div class="webInner" :style="">
 
             <div class="svgArea">
                 <svg id="ff75fbce-22aa-40d4-92cd-15785bbc85ab" data-name="svg2606" xmlns="http://www.w3.org/2000/svg"
@@ -229,6 +229,7 @@
                     }
 
                 }
+
             },
             computed: {
                 nowArea() {
@@ -258,10 +259,10 @@
         })
 
         $('path').mouseenter(function (e) {
-            var name = $(this).attr('data-name')
+            let name = $(this).attr('data-name')
             vm.hoverName = name
             vm.numb()
-            var  web = document.querySelector(".webInner")
+            let  web = document.querySelector(".webInner")
             web.setAttribute('style',number)
         })
 

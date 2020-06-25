@@ -36,8 +36,8 @@ body #app .webInner {
   display: flex;
   background-position: center;
   background-size: cover;
-  -webkit-transition: 2s;
-  transition: 2s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body #app .webInner .svgArea {
