@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./CSS/for_card.css">
+  <style>
+
+  </style>
+</head>
+<!--  -->
+
+<body>
+
+  <div id="app">
+    <div class="container-fluid" v-cloak="v-cloak">
+      <div class="row mynav p-2">
+        <div class="mynav-icon"><i class="fa fa-chevron-left"></i></div>
+        <div class="col text-center">魔物資料</div>
+        <div class="mynav-icon"><i class="fa fa-search"></i></div>
+      </div>
+      <ul class="nav nav-justified" style="font-size: 0.7rem">
+        <li class="nav-item"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">種族</a>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" type="button" @click="i.race = null"
+              :class="{active: i.race === null}">不限</button>
+            <button class="dropdown-item" type="button" v-for="(raceName, race) of races"
+              @click="i.race = _.parseInt(race)" :class="{active: i.race == race}" :key="race">{{ raceName }}</button>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">屬性</a>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" type="button" @click="i.nature = null"
+              :class="{active: i.nature === null}">不限</button>
+            <button class="dropdown-item" type="button" v-for="(natureName, nature) of natures"
+              @click="i.nature = _.parseInt(nature)" :class="{active: i.nature == nature}"
+              :key="nature">{{ natureName }}</button>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">體型</a>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" type="button" @click="i.size = null"
+              :class="{active: i.size === null}">不限</button>
+            <button class="dropdown-item" type="button" v-for="(sizeName, size) of sizes"
+              @click="i.size = _.parseInt(size)" :class="{active: i.size == size}" :key="size">{{ sizeName }}</button>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">類型</a>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" type="button" @click="i.type = null"
+              :class="{active: i.type == null}">不限</button>
+            <button class="dropdown-item" type="button" v-for="(typeName, type) of types"
+              @click="i.type = _.parseInt(type)" :class="{active: i.type == type}" :key="type">{{ typeName }}</button>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">排序</a>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" type="button" @click="i.order = null"
+              :class="{active: i.order == null}">默認排序</button>
+            <button class="dropdown-item" type="button" @click="i.order = 1"
+              :class="{active: i.order == 1}">等級低至高</button>
+            <button class="dropdown-item" type="button" @click="i.order = 2"
+              :class="{active: i.order == 2}">等級高至低</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid pl-5">
+      <div class="row text-monospace my-2" id="monsters">
+        <div class="monster-card col-md-6 p-3" v-for="monster of monsters" :key="monster.id">
+          <div class="row">
+            <div class=" media-l col-6 p-2 rounded"><img class="mr-3"
+                :src="`https://images.weserv.nl/?url=rostatic.zhaiwuyu.com/face/${monster.avatar}.png`" />
+              <div class="">
+                <div class="my-0">{{ monster.name }}</div>
+                <div style="font-size: 0.9em;">
+                  <span class=" mr-1">{{ _.get(races, monster.race) }}/</span>
+                  <span class=" mr-1"> {{ _.get(natures, monster.nature) }}/</span>
+                  <span class="">{{ _.get(sizes, monster.size) }}</span></div>
+              </div>
+            </div>
+            <div class="media-r col-6 ">
+              <div class="r-bag">
+                <div class=" monster-lv">Lv:&ensp;&ensp; {{monster.level}}</div>
+                <div class=" monster-hp">HP&ensp;&ensp;&ensp; {{monster.hp}}</div>
+                <div class=" monster-base">Base&ensp; {{monster.baseExp}}</div>
+                <div class=" monster-job">Job&ensp;&ensp; {{monster.jobExp}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="monster-type" v-if="monster.type !== 0" :class="`monster-type-${monster.type}`"></div>
+          <div class="monster-star" v-if="monster.isStar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=UA-135565218-1"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        i: {
+          race: null,
+          nature: null,
+          size: null,
+          type: null,
+          order: null,
+        },
+        races: {
+          "0": "無形",
+          "1": "人形",
+          "2": "植物",
+          "3": "動物",
+          "4": "昆蟲",
+          "5": "魚貝",
+          "6": "天使",
+          "7": "惡魔",
+          "8": "不死",
+          "9": "龍",
+        },
+        natures: {
+          "0": "無",
+          "1": "地",
+          "2": "風",
+          "3": "水",
+          "4": "火",
+          "5": "聖",
+          "6": "闇",
+          "7": "念",
+          "8": "不死",
+          "9": "毒",
+        },
+        sizes: {
+          "1": "小型",
+          "2": "中型",
+          "3": "大型",
+        },
+        types: {
+          "0": "普通",
+          "1": "MINI Boss",
+          "2": "MVP Boss"
+        },
+        rawMonsters: [],
+      },
+      async mounted() {
+        this.rawMonsters = _.get(await axios.get('https://eddie605134.github.io/romon30/mo.json'), 'data', [])
+
+      },
+      computed: {
+        monsters() {
+          let monsters = _.filter(this.rawMonsters, m => {
+            if (this.i.race !== null && this.i.race !== m.race) return false
+            if (this.i.nature !== null && this.i.nature !== m.nature) return false
+            if (this.i.size !== null && this.i.size !== m.size) return false
+            if (this.i.type !== null && this.i.type !== m.type) return false
+            return true
+          })
+          const order = this.i.order
+          if (!order) return monsters
+          monsters = _.sortBy(monsters, 'level')
+          return order === 1 ? monsters : monsters.reverse()
+        },
+      },
+    })
+
+
+
+
+  </script>
+</body>
+
+</html>

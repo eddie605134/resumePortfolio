@@ -1,0 +1,65 @@
+$font-size-base: 16px
+
+[v-cloak]
+    display: none
+.mynav
+    background-color: #4A89DC
+    color: white
+#monsters
+    .monster-card
+        position: relative
+        .row
+            .media-l
+                color: #3F97CE
+                font-size: 0.95em
+
+                &>img
+                    width: 64px
+                    height: 64px
+                    border: 3px solid #9DC6E6
+                    border-radius: 16px
+                    .mname
+                        display: inline
+            .media-r
+                padding-right: 15px
+                .r-bag
+                    width: 100%
+                    background-color: #EEEEEE
+
+    .monster-type
+        width: 0
+        height: 0
+        &::before
+            content: " "
+            position: absolute
+            background-image: url('https://images.weserv.nl/?url=rosc3.zhaiwuyu.com/m/img/monster-icon.png?version=20190619')
+            width: 23px
+            height: 27px
+            top: 26px
+            left: 11px
+            background-size: 150px
+            background-repeat: no-repeat
+    .monster-type-1::before
+        background-position: -30px 0
+    .monster-type-2::before
+        background-position: 0 0
+    .monster-star
+        width: 0
+        height: 0
+        &::before
+            content: " "
+            position: absolute
+            background-image: url('https://images.weserv.nl/?url=rosc3.zhaiwuyu.com/m/img/monster-icon.png?version=20190619')
+            width: 23px
+            height: 27px
+            top: 26px
+            left: 51px
+            background-size: 150px
+            background-repeat: no-repeat
+            background-position: 0 -30px
+
+
+
+
+
+

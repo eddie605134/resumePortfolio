@@ -1,0 +1,858 @@
+@-webkit-keyframes rubberBand {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes rubberBand {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+#app main .recording_title {
+  padding-top: 105px;
+}
+
+#app main .recording_title .recording_title_container {
+  padding: 20px 150px 0 150px;
+}
+
+@media (max-width: 992px) {
+  #app main .recording_title .recording_title_container {
+    padding: 20px 20px 0px 30px;
+  }
+}
+
+#app main .recording_title .recording_title_container .row .title_area {
+  width: 150px;
+  height: 50px;
+  border-radius: 0 30px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#50a3a2), to(#53e3a6));
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_title .recording_title_container .row .recording_btngp a {
+  color: #ffffff;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#app main .recording_title .recording_title_container .row .recording_btngp a .OK_btn {
+  width: 100px;
+  height: 65px;
+  border-radius: 30px;
+  background: #6BCBA5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 992px) {
+  #app main .recording_title .recording_title_container .row .recording_btngp a .OK_btn {
+    border-radius: 30px;
+    width: 80px;
+    height: 32px;
+  }
+}
+
+#app main .recording_title .recording_title_container .row .recording_btngp a .OK_btn .inner_btn {
+  width: 90px;
+  height: 55px;
+  border-radius: 30px;
+  border: 2px solid #FFF;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 992px) {
+  #app main .recording_title .recording_title_container .row .recording_btngp a .OK_btn .inner_btn {
+    width: 64px;
+    height: 23px;
+    border-radius: 24px;
+  }
+}
+
+#app main .recording_title .recording_title_container .row .recording_btngp a .ing_btn {
+  width: 100px;
+  height: 65px;
+  border-radius: 30px;
+  background: #F6DE53;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 10px;
+}
+
+@media (max-width: 992px) {
+  #app main .recording_title .recording_title_container .row .recording_btngp a .ing_btn {
+    border-radius: 30px;
+    width: 80px;
+    height: 32px;
+  }
+}
+
+#app main .recording_title .recording_title_container .row .recording_btngp a .ing_btn .inner_btn {
+  width: 90px;
+  height: 55px;
+  border-radius: 30px;
+  border: 2px solid #FFF;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 992px) {
+  #app main .recording_title .recording_title_container .row .recording_btngp a .ing_btn .inner_btn {
+    width: 64px;
+    height: 23px;
+    border-radius: 24px;
+  }
+}
+
+#app main .recording_title .recording_title_container .row .recording_btngp a .fail_btn {
+  width: 100px;
+  height: 65px;
+  border-radius: 30px;
+  background: #FF8A93;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 992px) {
+  #app main .recording_title .recording_title_container .row .recording_btngp a .fail_btn {
+    border-radius: 30px;
+    width: 80px;
+    height: 32px;
+  }
+}
+
+#app main .recording_title .recording_title_container .row .recording_btngp a .fail_btn .inner_btn {
+  width: 90px;
+  height: 55px;
+  border-radius: 30px;
+  border: 2px solid #FFF;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 992px) {
+  #app main .recording_title .recording_title_container .row .recording_btngp a .fail_btn .inner_btn {
+    width: 64px;
+    height: 23px;
+    border-radius: 24px;
+  }
+}
+
+#app main .recording_content {
+  padding-top: 40px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack {
+  padding: 20px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok {
+  background: -webkit-gradient(linear, left top, right bottom, from(#fff), color-stop(49.9%, #fff), color-stop(50%, #6BCBA5), to(#6BCBA5));
+  background: linear-gradient(to bottom right, #fff 0%, #fff 49.9%, #6BCBA5 50%, #6BCBA5 100%);
+  border-radius: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-filter: drop-shadow(12px 12px 7px #346b5586);
+          filter: drop-shadow(12px 12px 7px #346b5586);
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok:hover > .mask {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  opacity: 1;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok:hover .mask .mask_btn {
+  -webkit-animation: rubberBand 1s;
+          animation: rubberBand 1s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok:hover .seal {
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#6BCBA5), color-stop(49.9%, #6BCBA5), color-stop(50%, #fff), to(#fff));
+  background: linear-gradient(to bottom right, #6BCBA5 0%, #6BCBA5 49.9%, #fff 50%, #fff 100%);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .mask .mask_btn {
+  font-size: 32px;
+  font-weight: bold;
+  color: #08596C;
+  width: 200px;
+  height: 100px;
+  border-radius: 35px;
+  background: #6BCBA5;
+  border: 2px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .mask .mask_btn .inner_btn {
+  width: 170px;
+  height: 75px;
+  border-radius: 30px;
+  border: 2px solid #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .my_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .my_img img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .change_img {
+  padding-top: 20px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .change_img .my_object .my_obtitle {
+  color: #000;
+  font-size: 16px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .change_img .my_object .my_obcontent {
+  font-weight: bold;
+  color: #494949;
+  font-size: 18px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .change_img .arrow_img {
+  padding-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .change_img .arrow_img img {
+  width: auto;
+  height: 40px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .change_img .get_object {
+  padding-top: 20px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .change_img .get_object .gt_obtitle {
+  font-size: 16px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .change_img .get_object .gt_obcontent {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .get_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .get_img img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .seal {
+  position: absolute;
+  top: -21px;
+  right: -27px;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border: solid #08596C;
+  border-width: 2px 5px 2px 5px;
+  border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ok .seal p {
+  font-weight: bold;
+  font-size: 20px;
+  color: #08596C;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 8px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing {
+  background: -webkit-gradient(linear, left top, right bottom, from(#fff), color-stop(49.9%, #fff), color-stop(50%, #F6DE53), to(#F6DE53));
+  background: linear-gradient(to bottom right, #fff 0%, #fff 49.9%, #F6DE53 50%, #F6DE53 100%);
+  border-radius: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-filter: drop-shadow(12px 12px 7px #346b5586);
+          filter: drop-shadow(12px 12px 7px #346b5586);
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing:hover > .mask {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  opacity: 1;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing:hover .mask .mask_btn {
+  -webkit-animation: rubberBand 1s;
+          animation: rubberBand 1s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing:hover .seal {
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#F6DE53), color-stop(49.9%, #F6DE53), color-stop(50%, #fff), to(#fff));
+  background: linear-gradient(to bottom right, #F6DE53 0%, #F6DE53 49.9%, #fff 50%, #fff 100%);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .mask .mask_btn {
+  font-size: 32px;
+  font-weight: bold;
+  color: #E75400;
+  width: 200px;
+  height: 100px;
+  border-radius: 35px;
+  background: #F6DE53;
+  border: 2px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .mask .mask_btn .inner_btn {
+  width: 170px;
+  height: 75px;
+  border-radius: 30px;
+  border: 2px solid #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .my_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .my_img img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .change_img {
+  padding-top: 20px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .change_img .my_object .my_obtitle {
+  color: #000;
+  font-size: 16px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .change_img .my_object .my_obcontent {
+  font-weight: bold;
+  color: #494949;
+  font-size: 18px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .change_img .arrow_img {
+  padding-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .change_img .arrow_img img {
+  width: auto;
+  height: 40px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .change_img .get_object {
+  padding-top: 20px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .change_img .get_object .gt_obtitle {
+  font-size: 16px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .change_img .get_object .gt_obcontent {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .get_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .get_img img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .seal {
+  position: absolute;
+  top: -21px;
+  right: -27px;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border: solid #E75400;
+  border-width: 2px 5px 2px 5px;
+  border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_ing .seal p {
+  font-weight: bold;
+  font-size: 20px;
+  color: #E75400;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 8px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase {
+  background: -webkit-gradient(linear, left top, right bottom, from(#fff), color-stop(49.9%, #fff), color-stop(50%, #FF8A93), to(#FF8A93));
+  background: linear-gradient(to bottom right, #fff 0%, #fff 49.9%, #FF8A93 50%, #FF8A93 100%);
+  border-radius: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-filter: drop-shadow(12px 12px 7px #346b5586);
+          filter: drop-shadow(12px 12px 7px #346b5586);
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase:hover > .mask {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  opacity: 1;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase:hover .mask .mask_btn {
+  -webkit-animation: rubberBand 1s;
+          animation: rubberBand 1s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase:hover .seal {
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#FF8A93), color-stop(49.9%, #FF8A93), color-stop(50%, #fff), to(#fff));
+  background: linear-gradient(to bottom right, #FF8A93 0%, #FF8A93 49.9%, #fff 50%, #fff 100%);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .mask .mask_btn {
+  font-size: 32px;
+  font-weight: bold;
+  color: #FF2B00;
+  width: 200px;
+  height: 100px;
+  border-radius: 35px;
+  background: #FF8A93;
+  border: 2px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .mask .mask_btn .inner_btn {
+  width: 170px;
+  height: 75px;
+  border-radius: 30px;
+  border: 2px solid #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .my_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .my_img img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .change_img {
+  padding-top: 20px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .change_img .my_object .my_obtitle {
+  color: #000;
+  font-size: 16px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .change_img .my_object .my_obcontent {
+  font-weight: bold;
+  color: #494949;
+  font-size: 18px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .change_img .arrow_img {
+  padding-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .change_img .arrow_img img {
+  width: auto;
+  height: 40px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .change_img .get_object {
+  padding-top: 20px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .change_img .get_object .gt_obtitle {
+  font-size: 16px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .change_img .get_object .gt_obcontent {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .get_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .get_img img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .seal {
+  position: absolute;
+  top: -21px;
+  right: -27px;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border: solid #FF2B00;
+  border-width: 2px 5px 2px 5px;
+  border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+}
+
+#app main .recording_content .recording_content_container .card_padding_area .pack a .recording_card_flase .seal p {
+  font-weight: bold;
+  font-size: 20px;
+  color: #FF2B00;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 8px;
+}
+/*# sourceMappingURL=change_recording.css.map */

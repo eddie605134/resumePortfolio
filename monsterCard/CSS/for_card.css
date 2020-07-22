@@ -1,0 +1,81 @@
+[v-cloak] {
+  display: none;
+}
+
+.mynav {
+  background-color: #4A89DC;
+  color: white;
+}
+
+#monsters .monster-card {
+  position: relative;
+}
+
+#monsters .monster-card .row .media-l {
+  color: #3F97CE;
+  font-size: 0.95em;
+}
+
+#monsters .monster-card .row .media-l > img {
+  width: 64px;
+  height: 64px;
+  border: 3px solid #9DC6E6;
+  border-radius: 16px;
+}
+
+#monsters .monster-card .row .media-l > img .mname {
+  display: inline;
+}
+
+#monsters .monster-card .row .media-r {
+  padding-right: 15px;
+}
+
+#monsters .monster-card .row .media-r .r-bag {
+  width: 100%;
+  background-color: #EEEEEE;
+}
+
+#monsters .monster-type {
+  width: 0;
+  height: 0;
+}
+
+#monsters .monster-type::before {
+  content: " ";
+  position: absolute;
+  background-image: url("https://images.weserv.nl/?url=rosc3.zhaiwuyu.com/m/img/monster-icon.png?version=20190619");
+  width: 23px;
+  height: 27px;
+  top: 26px;
+  left: 11px;
+  background-size: 150px;
+  background-repeat: no-repeat;
+}
+
+#monsters .monster-type-1::before {
+  background-position: -30px 0;
+}
+
+#monsters .monster-type-2::before {
+  background-position: 0 0;
+}
+
+#monsters .monster-star {
+  width: 0;
+  height: 0;
+}
+
+#monsters .monster-star::before {
+  content: " ";
+  position: absolute;
+  background-image: url("https://images.weserv.nl/?url=rosc3.zhaiwuyu.com/m/img/monster-icon.png?version=20190619");
+  width: 23px;
+  height: 27px;
+  top: 26px;
+  left: 51px;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: 0 -30px;
+}
+/*# sourceMappingURL=for_card.css.map */

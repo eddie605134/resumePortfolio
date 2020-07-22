@@ -1,0 +1,238 @@
+//recording_card樣式表:
+//完成:$card_color=#6BCBA5 $seal_color=#08596C
+//進行中:$card_color=#F6DE53 $seal_color=#E75400
+//取消:$card_color=#FF8A93 $seal_color=#FF2B00
+@mixin keyframes($animationName)
+    @keyframes #{$animationName}
+        @content;
+@include keyframes(rubberBand)//keyform
+    from
+        transform: scale3d(1, 1, 1)
+    30%
+        transform: scale3d(1.25, 0.75, 1)
+    40%
+        transform: scale3d(0.75, 1.25, 1)
+    50%
+        transform: scale3d(1.15, 0.85, 1)
+    65%
+        transform: scale3d(0.95, 1.05, 1)
+    75%
+        transform: scale3d(1.05, 0.95, 1)
+    to
+        transform: scale3d(1, 1, 1)
+@mixin recording_card($card_color,$seal_color)
+    background: linear-gradient(to bottom right, #fff 0%, #fff 49.9%, $card_color 50%,$card_color 100%)
+    border-radius: 20px
+    position: relative
+    display: flex
+    padding: 20px
+    filter: drop-shadow(12px 12px 7px #346b5586)
+    &:hover>.mask
+        transition: 0.8s
+        opacity: 1
+    &:hover .mask .mask_btn
+        animation: rubberBand 1s
+        animation-delay: 0.3s
+    &:hover .seal
+        opacity: 0
+        transition: .5s
+        transform: scale(2)
+    .mask
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 20px
+        background: linear-gradient(to bottom right, $card_color 0%, $card_color 49.9%, #fff 50%,#fff 100%)
+        transition: 0.8s
+        opacity: 0
+        +center
+        .mask_btn
+            font-size: 32px
+            font-weight: bold
+            color: $seal_color
+            width: 200px
+            height: 100px
+            border-radius: 35px
+            background: $card_color
+            border: 2px solid #fff
+            +center
+            .inner_btn
+                width: 170px
+                height: 75px
+                border-radius: 30px
+                border: 2px solid #FFF
+                +center
+    .my_img
+        +center
+        img
+            width: 150px
+            height: 200px
+            border-radius: 10px
+    .change_img
+        padding-top: 20px
+        .my_object
+            .my_obtitle
+                color: #000
+                font-size: 16px
+            .my_obcontent
+                font-weight: bold
+                color: #494949
+                font-size: 18px
+        .arrow_img
+            padding-top: 15px
+            +center
+            img
+                width: auto
+                height: 40px
+
+        .get_object
+            padding-top: 20px
+            .gt_obtitle
+                font-size: 16px
+            .gt_obcontent
+                font-weight: bold
+                font-size: 18px
+    .get_img
+        +center
+        img
+            width: 150px
+            height: 200px
+            border-radius: 10px
+    .seal
+        position: absolute
+        top: -21px
+        right: -27px
+        width: 60px
+        height: 60px
+        transform: rotate(45deg)
+        border: solid $seal_color
+        border-width: 2px 5px 2px 5px
+        border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%
+        p
+            font-weight: bold
+            font-size: 20px
+            color: $seal_color
+            transform: rotate(-45deg)
+            margin-top: 8px
+
+@mixin center
+    display: flex
+    justify-content: center
+    align-items: center
+//垂直置中
+#app
+    nav
+    main
+        .recording_title
+            padding-top: 105px
+            .recording_title_container
+                padding: 20px 150px 0 150px
+                @media (max-width: 992px)
+                    padding: 20px 20px 0px 30px
+                .row
+                    .title_area
+                        width: 150px
+                        height: 50px
+                        border-radius: 0 30px
+                        background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%)
+                        font-size: 22px
+                        +center
+
+                    .recording_btngp
+                        a
+                            color: #ffffff
+                            text-decoration: none
+                            display: flex
+                            align-items: flex-end
+                            .OK_btn
+                                width: 100px
+                                height: 65px
+                                border-radius: 30px
+                                background: #6BCBA5
+                                +center
+                                @media (max-width: 992px)
+                                    border-radius: 30px
+                                    width: 80px
+                                    height: 32px
+                                .inner_btn
+                                    width: 90px
+                                    height: 55px
+                                    border-radius: 30px
+                                    border: 2px solid #FFF
+                                    font-size: 18px
+                                    +center
+                                    @media (max-width: 992px)
+                                        width: 64px
+                                        height: 23px
+                                        border-radius: 24px
+                        a
+
+                            .ing_btn
+                                width: 100px
+                                height: 65px
+                                border-radius: 30px
+                                background: #F6DE53
+                                +center
+                                margin-left: 10px
+                                @media (max-width: 992px)
+                                    border-radius: 30px
+                                    width: 80px
+                                    height: 32px
+                                .inner_btn
+                                    width: 90px
+                                    height: 55px
+                                    border-radius: 30px
+                                    border: 2px solid #FFF
+                                    font-size: 18px
+                                    +center
+                                    @media (max-width: 992px)
+                                        width: 64px
+                                        height: 23px
+                                        border-radius: 24px
+                        a
+
+                            .fail_btn
+                                width: 100px
+                                height: 65px
+                                border-radius: 30px
+                                background: #FF8A93
+                                margin-left: 10px
+                                +center
+                                @media (max-width: 992px)
+                                    border-radius: 30px
+                                    width: 80px
+                                    height: 32px
+                                .inner_btn
+                                    width: 90px
+                                    height: 55px
+                                    border-radius: 30px
+                                    border: 2px solid #FFF
+                                    font-size: 18px
+                                    +center
+                                    @media (max-width: 992px)
+                                        width: 64px
+                                        height: 23px
+                                        border-radius: 24px
+        .recording_content
+            padding-top: 40px
+            .recording_content_container
+                .card_padding_area
+                    .pack
+                        padding: 20px
+                        a
+                            text-decoration: none
+                            color: #fff
+                            .recording_card_ok
+                                +recording_card(#6BCBA5,#08596C)
+                            .recording_card_ing
+                                +recording_card(#F6DE53,#E75400)
+                            .recording_card_flase
+                                +recording_card(#FF8A93,#FF2B00)
+
+
+
+
+
+
