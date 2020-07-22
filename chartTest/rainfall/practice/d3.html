@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/d3.css">
+</head>
+<body>
+
+    <div class="graph"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+    <script>
+
+        var datas =[]
+        var elements = []
+        function genData(){
+            var temp = []
+            for(var i=0;i<10;i++){
+                temp.push(Math.random()*10+5)
+            }
+            return temp
+        }
+
+        datas = genData()
+
+        var yscale = d3.scaleLinear().domain([5,15]).range([0,400])
+        var color = d3.scaleLinear().domain([5,15]).range(['white','red'])
+
+        //d是資料，i是抓到第幾個
+        d3.select(".graph").selectAll(".bar")
+        .data(datas)
+        .enter()
+        .append('div')
+        .attr("class","bar")
+        .style("height",(d,i)=>(yscale(d)+"px"))
+        .style("background-color",(d)=>(color(d)))
+        .style("margin-bottom",(d)=>(200-yscale(d)/2 + "px"))
+        .transition().duration(500)
+        .style("margin-bottom","0px")
+        .transition().duration(500)
+        .style('margin-right','0px')
+        .style('width',(d,i)=>(yscale(d)+"px"))
+
+        /*datas.forEach((obj,index)=>{
+
+            var bar = `<div class="bar"><div class="text"></div></div>`
+            var color_v = parseInt(obj)*15
+            var element = $(bar)
+            element.css('height',obj*20 + 'px')
+                   .css('background-color',`rgb(${ color_v},${ color_v},${ color_v})`)
+            element.children(".text").text(obj.toFixed(1))
+
+            $('.graph').append(element);
+            elements.push(element)
+        })*/
+
+        //更新
+       /* setInterval(()=>{
+            datas = genData()
+            elements.forEach((element,index)=>{
+                var color_v = parseInt(datas[index])*15
+                element.css('height',datas[index]*20 + 'px')
+                   .css('background-color',`rgb(${ color_v},${ color_v},${ color_v})`)
+                   element.children(".text").text(datas[index].toFixed(1))
+            })
+
+        },500)*/
+
+    </script>
+
+</body>
+</html>

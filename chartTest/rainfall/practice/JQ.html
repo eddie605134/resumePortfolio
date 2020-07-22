@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/JQvue.css">
+</head>
+<body>
+
+    <div class="graph"></div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+
+    var datas =[]
+    var elements = []
+    function genData(){
+        var temp = []
+        for(var i=0;i<10;i++){
+            temp.push(Math.random()*10+5)
+        }
+        return temp
+    }
+
+    datas = genData()
+
+    datas.forEach((obj,index)=>{
+
+        var bar = `<div class="bar"><div class="text"></div></div>`
+        var color_v = parseInt(obj)*15
+        var element = $(bar)
+        element.css('height',obj*20 + 'px')
+               .css('background-color',`rgb(${ color_v},${ color_v},${ color_v})`)
+        element.children(".text").text(obj.toFixed(1))
+
+        $('.graph').append(element);
+        elements.push(element)
+    })
+
+    //更新
+    setInterval(()=>{
+        datas = genData()
+        elements.forEach((element,index)=>{
+            var color_v = parseInt(datas[index])*15
+            element.css('height',datas[index]*20 + 'px')
+               .css('background-color',`rgb(${ color_v},${ color_v},${ color_v})`)
+               element.children(".text").text(datas[index].toFixed(1))
+        })
+
+    },500)
+
+</script>
+
+</body>
+</html>

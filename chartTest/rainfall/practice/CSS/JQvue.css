@@ -1,0 +1,28 @@
+.graph {
+  width: 500px;
+  height: 400px;
+  border: solid 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.graph .bar {
+  width: 30px;
+  border: solid 2px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  position: relative;
+}
+
+.graph .bar .text {
+  position: absolute;
+  bottom: -30px;
+}
+/*# sourceMappingURL=JQvue.css.map */

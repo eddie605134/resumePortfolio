@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="cir"></div>
+<p>123123</p>
+
+<ul class="ulTest"></ul>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script>
+d3.select('p').style('color','blue')
+
+//SVG
+d3.select('.cir')
+  .append('svg')
+  .attr({
+    "width":"100px",
+    "height":"100px"
+})
+
+d3.select('.cir svg').append('circle').attr({
+    "cx":50,
+    "cy":50,
+    "r":50,
+    "fill":"red"
+})
+
+d3.select('.cir svg circle')
+   .transition().duration(1000).delay(2000).attr({
+     fill: "black"
+   });
+
+
+//帶入資料
+let vote = [165,161,56156,156]
+
+d3.select('.ulTest')
+  .selectAll('li')
+  .data(vote)
+  .enter()
+  .append('li')
+  .text((d)=>{
+    return d
+  })
+
+
+
+
+
+</script>
+</body>
+</html>
