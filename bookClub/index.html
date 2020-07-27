@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                <div class="swiper-pagination sp" ></div>
+                <div class="swiper-pagination sp"></div>
 
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -180,7 +180,14 @@
                     'https://datacenter.taichung.gov.tw/swagger/OpenData/d60b0950-9f12-476e-84ea-2f9302777dcf'
                 ), 'data')
 
-                console.log(res)
+
+                //this.$set(this.student,"age", 24)
+                //this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
+                /*
+                this.$set(this, 'bookClubs', xxxxxxxxxxx)
+                */
+
+
                 this.bookClubs = _.map(res, row => ({
                     mailArea: _.get(row, '郵遞區號'),
                     areas: _.get(row, '區域'),
@@ -191,7 +198,6 @@
                     chargePhone: _.get(row, '聯絡電話')
                 }))
 
-                this.initSwiper()
             },
             computed: {
                 TcArea() {
@@ -201,12 +207,11 @@
                     let TcArea = _.filter(area, (a, index) => {
                         if (area.indexOf(a) == index) return true
                     })
-                    this.initSwiper()
                     return TcArea
                 },
                 bCards() {
                     let bCards = _.filter(this.bookClubs, b => {
-                        if(this.area !== "全區" && b.areas !== this.area) return false
+                        if (this.area !== "全區" && b.areas !== this.area) return false
                         return true
                     })
                     return bCards
@@ -214,38 +219,38 @@
             },
             created() {
 
-
             },
             methods: {
-                initSwiper() {
-                    mySwiper = new Swiper('.swiper-container', {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                        // init: false,
-                        pagination: {
-                            el: '.swiper-pagination',
-                            clickable: true,
+
+            },
+            updated() {
+                new Swiper('.swiper-container', {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    // init: false,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    /*breakpoints: {
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
                         },
-                        /*breakpoints: {
-                            640: {
-                                slidesPerView: 1,
-                                spaceBetween: 20,
-                            },
-                            768: {
-                                slidesPerView: 3,
-                                spaceBetween: 30,
-                            },
-                            1024: {
-                                slidesPerView: 3,
-                                spaceBetween: 50,
-                            },
-                        },*/
-                        navigation: {
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
                         },
-                    });
-                },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 50,
+                        },
+                    },*/
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
             },
         })
 

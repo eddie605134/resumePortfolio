@@ -181,6 +181,7 @@
                 ), 'data')
 
                 console.log(res)
+                //this.$set(this.student,"age", 24)
                 this.bookClubs = _.map(res, row => ({
                     mailArea: _.get(row, '郵遞區號'),
                     areas: _.get(row, '區域'),
