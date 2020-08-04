@@ -62,201 +62,201 @@ body {
 
 #app .bg-bubbles li:nth-child(1) {
   left: 5%;
-  -webkit-animation-duration: 20s;
-          animation-duration: 20s;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
-  width: 61px;
-  height: 61px;
+  -webkit-animation-duration: 17s;
+          animation-duration: 17s;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  width: 103px;
+  height: 103px;
 }
 
 #app .bg-bubbles li:nth-child(2) {
   left: 10%;
-  -webkit-animation-duration: 19s;
-          animation-duration: 19s;
-  -webkit-animation-delay: -2s;
-          animation-delay: -2s;
-  width: 90px;
-  height: 90px;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  width: 93px;
+  height: 93px;
 }
 
 #app .bg-bubbles li:nth-child(3) {
   left: 15%;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  width: 60px;
-  height: 60px;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  width: 66px;
+  height: 66px;
 }
 
 #app .bg-bubbles li:nth-child(4) {
   left: 20%;
   -webkit-animation-duration: 19s;
           animation-duration: 19s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  width: 60px;
-  height: 60px;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  width: 43px;
+  height: 43px;
 }
 
 #app .bg-bubbles li:nth-child(5) {
   left: 25%;
-  -webkit-animation-duration: 20s;
-          animation-duration: 20s;
-  -webkit-animation-delay: 9s;
-          animation-delay: 9s;
-  width: 111px;
-  height: 111px;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  width: 119px;
+  height: 119px;
 }
 
 #app .bg-bubbles li:nth-child(6) {
   left: 30%;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-  width: 79px;
-  height: 79px;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+  width: 89px;
+  height: 89px;
 }
 
 #app .bg-bubbles li:nth-child(7) {
   left: 35%;
-  -webkit-animation-duration: 16s;
-          animation-duration: 16s;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  width: 103px;
-  height: 103px;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 59px;
+  height: 59px;
 }
 
 #app .bg-bubbles li:nth-child(8) {
   left: 40%;
-  -webkit-animation-duration: 14s;
-          animation-duration: 14s;
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
-  width: 97px;
-  height: 97px;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 118px;
+  height: 118px;
 }
 
 #app .bg-bubbles li:nth-child(9) {
   left: 45%;
-  -webkit-animation-duration: 13s;
-          animation-duration: 13s;
-  -webkit-animation-delay: -3s;
-          animation-delay: -3s;
-  width: 82px;
-  height: 82px;
+  -webkit-animation-duration: 17s;
+          animation-duration: 17s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  width: 61px;
+  height: 61px;
 }
 
 #app .bg-bubbles li:nth-child(10) {
   left: 50%;
-  -webkit-animation-duration: 19s;
-          animation-duration: 19s;
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
   width: 57px;
   height: 57px;
 }
 
 #app .bg-bubbles li:nth-child(11) {
   left: 55%;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
-  width: 57px;
-  height: 57px;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  width: 98px;
+  height: 98px;
 }
 
 #app .bg-bubbles li:nth-child(12) {
   left: 60%;
-  -webkit-animation-duration: 11s;
-          animation-duration: 11s;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  width: 62px;
-  height: 62px;
+  -webkit-animation-duration: 19s;
+          animation-duration: 19s;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  width: 94px;
+  height: 94px;
 }
 
 #app .bg-bubbles li:nth-child(13) {
   left: 65%;
-  -webkit-animation-duration: 17s;
-          animation-duration: 17s;
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
-  width: 63px;
-  height: 63px;
+  -webkit-animation-duration: 19s;
+          animation-duration: 19s;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+  width: 83px;
+  height: 83px;
 }
 
 #app .bg-bubbles li:nth-child(14) {
   left: 70%;
-  -webkit-animation-duration: 14s;
-          animation-duration: 14s;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  width: 63px;
-  height: 63px;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  width: 45px;
+  height: 45px;
 }
 
 #app .bg-bubbles li:nth-child(15) {
   left: 75%;
-  -webkit-animation-duration: 12s;
-          animation-duration: 12s;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
-  width: 66px;
-  height: 66px;
+  width: 68px;
+  height: 68px;
 }
 
 #app .bg-bubbles li:nth-child(16) {
   left: 80%;
-  -webkit-animation-duration: 20s;
-          animation-duration: 20s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  width: 52px;
-  height: 52px;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+  width: 54px;
+  height: 54px;
 }
 
 #app .bg-bubbles li:nth-child(17) {
   left: 85%;
-  -webkit-animation-duration: 17s;
-          animation-duration: 17s;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  width: 55px;
-  height: 55px;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  width: 62px;
+  height: 62px;
 }
 
 #app .bg-bubbles li:nth-child(18) {
   left: 90%;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-animation-delay: 7s;
-          animation-delay: 7s;
-  width: 42px;
-  height: 42px;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  width: 108px;
+  height: 108px;
 }
 
 #app .bg-bubbles li:nth-child(19) {
   left: 95%;
-  -webkit-animation-duration: 14s;
-          animation-duration: 14s;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-  width: 44px;
-  height: 44px;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 87px;
+  height: 87px;
 }
 
 #app .bg-bubbles li:nth-child(20) {
   left: 100%;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-  width: 77px;
-  height: 77px;
+  -webkit-animation-duration: 17s;
+          animation-duration: 17s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  width: 91px;
+  height: 91px;
 }
 /*# sourceMappingURL=style_guid.css.map */
