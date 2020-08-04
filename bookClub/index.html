@@ -81,41 +81,49 @@
 
 
         <main class="outerArea" v-cloak="v-cloak">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="(bCard,index) of bCards" :key="index">
-                        <div class="bookCard">
-                            <div class="textArea">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="cname">讀書會名稱: {{ bCard.clubName }}</div>
+            <swiper
+             :bCards="bCards"
+             :key="bCards.length"
+            >
+                <div class="swiper-slide" v-for="(bCard,index) of bCards" :key="index">
+                    <div class="bookCard">
+                        <div class="textArea">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="cname">讀書會名稱: {{ bCard.clubName }}</div>
+                                </div>
+                                <div class=" col-12">
+                                    <div class="carea">讀書會地區: {{ bCard.areas }}</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="activArea">
+                                        <div class="btime">活動時間: {{ bCard.eventT }}</div>
                                     </div>
-                                    <div class=" col-12">
-                                        <div class="carea">讀書會地區: {{ bCard.areas }}</div>
+                                </div>
+                                <div class=" col-6">
+                                    <div class="chargeArea">
+                                        <div class="chpeo">聯絡人: {{ bCard.charge }}</div>
+                                        <div class="chphone">連絡電話: {{ bCard.chargePhone }}</div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="activArea">
-                                            <div class="btime">活動時間: {{ bCard.eventT }}</div>
-                                            <div class="bplace">活動地點: {{ bCard.eventP }}</div>
-                                        </div>
-                                    </div>
-                                    <div class=" col-6">
-                                        <div class="chargeArea">
-                                            <div class="chpeo">聯絡人: {{ bCard.charge }}</div>
-                                            <div class="chphone">連絡電話: {{ bCard.chargePhone }}</div>
-                                        </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="placeArea">
+                                        <div class="bplace">活動地點: {{ bCard.eventP }}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </swiper>
 
-                <div class="swiper-pagination sp"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+            <div class="many">
+                <div class="title_inner">
+                    有&nbsp&nbsp{{ bCards.length }}&nbsp&nbsp間讀書會
+                </div>
             </div>
+
+
         </main>
 
 
@@ -141,28 +149,29 @@
         crossorigin="anonymous"></script>
     <script>
 
-        Vue.component('swiperInside', {
+        Vue.component('swiper', {
             template: `
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                    <div class="swiper-slide">Slide 6</div>
+                    <slot></slot>
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
+
+                <div class="swiper-pagination sp"></div>
 
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
             `,
-            data: function () {
-                return {
-
-                }
+            props:["bCards"],
+            async mounted(){
+                await new Swiper('.swiper-container', {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
             }
         })
 
@@ -224,33 +233,7 @@
 
             },
             updated() {
-                new Swiper('.swiper-container', {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    // init: false,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    /*breakpoints: {
-                        640: {
-                            slidesPerView: 1,
-                            spaceBetween: 20,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 30,
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                            spaceBetween: 50,
-                        },
-                    },*/
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                });
+
             },
         })
 
