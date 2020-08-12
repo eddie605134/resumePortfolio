@@ -55,6 +55,9 @@ body #app .webInner .content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-filter: blur(10);
+          filter: blur(10);
 }
 
 body #app .webInner .content .card {
